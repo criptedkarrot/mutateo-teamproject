@@ -28,6 +28,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Instanced, Category = "fragarray")
 	TArray<TObjectPtr<Uinventoryitemfragments>> Fragments;
 
-
-
+UFUNCTION(BlueprintCallable, BlueprintPure, meta = (DeterminesOutputType = "fragmentclass"))
+	static const Uinventoryitemfragments* findfragmentbyclass(const TSubclassOf<Uitemdefinition> itemdefinition, const TSubclassOf<Uinventoryitemfragments> FragmentClass);
+	
 };
