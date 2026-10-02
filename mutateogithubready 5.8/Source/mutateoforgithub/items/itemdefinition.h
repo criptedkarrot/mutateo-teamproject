@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "itemdefinition.generated.h"
-
+class Uinventoryitemfragments;
 /**
  * 
  */
@@ -24,6 +24,9 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Display")
 	TObjectPtr<UTexture2D> ItemIcon;
+	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Instanced, Category = "fragarray")
+	TArray<TObjectPtr<Uinventoryitemfragments>> Fragments;
 
 
 
