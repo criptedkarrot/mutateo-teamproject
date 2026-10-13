@@ -1,0 +1,37 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
+#include "UObject/Object.h"
+#include "ItemInstance.generated.h"
+
+class UItemDefinition;
+/**
+ * 
+ */
+UCLASS(BlueprintType)
+class MUTATEOFORGITHUB_API UItemInstance : public UObject
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(BlueprintReadOnly)
+	TSubclassOf<UItemDefinition> ItemDefinition;
+	
+	UPROPERTY(BlueprintReadOnly)
+	TMap<FGameplayTag, float> StatsMap;
+	
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Item Stats", meta = (Categories = "Item.Stat"))
+	float GetStatValue(FGameplayTag StatTag);
+	
+	UFUNCTION(BlueprintCallable, Category = "Item Stats", meta = (Categories = "Item.Stat"))
+	void SetStatValue(FGameplayTag StatTag, float StatValue);
+	
+	UFUNCTION(BlueprintCallable, Category= "Item Instance", meta = (AutoCreateRefTerm = "InitialStats"))
+	void Initialize(TSubclassOf<UItemDefinition> ItemDef, const TMap<FGameplayTag, float>& InitialStats);
+	
+	UFUNCTION(BlueprintCallable, BlueprintPure, meta = (DeterminesOutputType = "FragmentClass"))
+	const UInventoryItemFragment* FindFragmentByClass(const TSubclassOf<UInventoryItemFragment> FragmentClass);
+};
