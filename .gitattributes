@@ -2,3 +2,4 @@
 * text=auto
 *.bin filter=lfs diff=lfs merge=lfs -text
 *D:/githubgroupproject/mutateo/mutateo-teamproject/mutateogithubready/Intermediate/CachedAssetRegistry/CachedAssetRegistry_0_EF2964A2453C7EC736FA5C8321AEA56E.bin filter=lfs diff=lfs merge=lfs -text
+BOCHO8MWAST2RF362OA38E.uasset filter=lfs diff=lfs merge=lfs -text
