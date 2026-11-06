@@ -1,7 +1,0 @@
-Breadcrumbs 'Parallel'
- - FVirtualShadowMapArray::BeginMarkPages
- - VirtualShadowMapMarkPages
- - Scene
- - RenderGraphExecute - /ViewFamilies
- - SceneRender - ViewFamilies
- - Frame 268411
